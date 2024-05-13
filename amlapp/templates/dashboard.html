@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Container with horizontal scrolling and snap settings -->
+<div class="flex overflow-x-auto snap-mandatory hover:snap-x w-full bg-cover bg-center snap-none hide-scrollbar ">
+    <div class="snap-always snap-center flex-shrink-0 flex items-center justify-center w-full h-screen ">
+        <h1 class="text-xl ">Welcome, {{ user.username }}!</h1>
+        <p class="text-color-red ">This is your dashboard.</p>
+        <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+            <button type="submit" style="border: none; background: none; cursor: pointer; color: blue; text-decoration: underline;">
+                Logout
+            </button>
+        </form>  
+    </div>
+    <!-- Each child div snaps to the center of the scroll container on scroll -->
+    <div class="snap-always snap-center flex-shrink-0 flex items-center justify-center w-full h-full h-screen bg-cover bg-center"  style="background-image: url(https://images.pexels.com/photos/4887152/pexels-photo-4887152.jpeg)">
+      
+    </div>
+    <!-- Repeat for each image -->
+    <div class="snap-always snap-center flex-shrink-0 flex items-center justify-center w-full h-full h-screen bg-cover bg-center"  style="background-image: url(https://images.pexels.com/photos/8923970/pexels-photo-8923970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)">
+      
+    </div>
+    <!-- Additional images -->
+</div>
+  
+    
+
+
+
+{% endblock  %}
+
+

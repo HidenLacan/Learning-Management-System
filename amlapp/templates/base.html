@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+
+    <script src="https://unpkg.com/scrollreveal@4"></script>
+    
+    <!-- This is the part to write the static code and the references--- -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home.css' %}" />
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    
+</head>
+<body class="">
+
+    {% include "navbar.html" %}
+
+    <div class="hide-scrollbar">
+        {% block content %}
+        {% endblock  %}
+    </div>
+
+    <script>
+       
+            document.addEventListener('DOMContentLoaded', function () {
+                const toggleButton = document.querySelector('[data-collapse-toggle="navbar-sticky"]');
+                const navbarMenu = document.getElementById('navbar-sticky');
+            
+                toggleButton.addEventListener('click', function () {
+                    const isOpen = toggleButton.getAttribute('aria-expanded') === 'true';
+                    toggleButton.setAttribute('aria-expanded', !isOpen);
+                    navbarMenu.classList.toggle('hidden'); // Toggle visibility
+                });
+            });
+
+            
+    </script>
+    <script>
+      AOS.init()
+    </script>
+    
+        <script>
+            document.addEventListener('DOMContentLoaded', (event) => {
+                VANTA.BIRDS({
+                    el: "#your-element-selector",
+                    mouseControls: true,
+                    touchControls: true,
+                    gyroControls: false,
+                    minHeight: 200.00,
+                    minWidth: 200.00,
+                    scale: 1.00,
+                    scaleMobile: 1.00,
+                    backgroundColor: 0x0,
+                    color1: 0xffffff,
+                    color2: 0x5600ff,
+                    birdSize: 0.60,
+                    wingSpan: 40.00,
+                    alignment: 1.00,
+                    cohesion: 100.00
+                  })
+            });
+        </script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', (event) => {
+                VANTA.NET({
+                    el: "#your-element-selector-2",
+                    mouseControls: true,
+                    touchControls: true,
+                    gyroControls: false,
+                    minHeight: 200.00,
+                    minWidth: 200.00,
+                    scale: 1.00,
+                    scaleMobile: 1.00,
+                    color: 0xf9f9f9,
+                    backgroundColor: 0x0,
+                    points: 20.00,
+                    maxDistance: 13.00,
+                    spacing: 18.00
+                  })
+            });
+        </script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', (event) => {
+                VANTA.NET({
+                    el: "#your-element-selector-3",
+                    mouseControls: true,
+                    touchControls: true,
+                    gyroControls: false,
+                    minHeight: 200.00,
+                    minWidth: 200.00,
+                    scale: 1.00,
+                    scaleMobile: 1.00,
+                    color: 0xf9f9f9,
+                    backgroundColor: 0x0,
+                    points: 20.00,
+                    maxDistance: 13.00,
+                    spacing: 18.00
+                  })
+            });
+        </script>
+
+        <script>
+            ScrollReveal().reveal('.headline');
+        </script>
+
+
+        
+    
+</body>
+</html>
