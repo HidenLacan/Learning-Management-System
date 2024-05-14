@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-#_3(63oi(-!+xca^290d7n8-2_xr46ri)k=76go(0m)1*a7qfb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # settings.py
 AUTH_USER_MODEL = 'amlapp.CustomUser'
